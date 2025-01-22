@@ -4,14 +4,14 @@ import google.generativeai as genai
 
 st.title("Chatbot with Fitness Dataset")
 
-uploaded_file = r"C:\Users\kuber\Downloads\Fitness_data.csv"  # Path to your uploaded dataset
+uploaded_file = r"C:\Users\kuber\Downloads\Fitness_data.csv"  
 try:
     data = pd.read_csv(uploaded_file)
 except Exception as e:
     st.error(f"Error loading the dataset: {e}")
     data = None
 
-api_key = 'AIzaSyDFT0YvA1S9lpklX7xFJWyuqJrrdpcT9vw'  # Replace with your valid API key
+api_key = 'AIzaSyDFT0YvA1S9lpklX7xFJWyuqJrrdpcT9vw'  
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
